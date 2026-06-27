@@ -1,120 +1,103 @@
-# GameStore Frontend
+# 🎮 GameStore Frontend
 
-A React-based frontend application for browsing and purchasing digital game items.
-
-The application communicates with the backend API to provide:
-
-* User authentication
-* Product browsing and filtering
-* Shopping cart management
-* Order placement and history
+A modern **React-based e-commerce frontend** for browsing and purchasing digital game items.  
+This project communicates with a backend REST API to provide a complete shopping experience.
 
 ---
 
-# 🚀 Tech Stack
+## 🚀 Features
 
-* React 19
-* Vite
-* React Router DOM
-* Context API (Authentication)
-* Fetch API
-* Vanilla CSS
-
----
-
-# 📦 Prerequisites
-
-Before running the project, ensure you have:
-
-* Node.js 20+ installed
-* npm installed
-* Backend API running locally
+- User authentication (Login / Register)
+- Browse and search game products
+- Product details page
+- Shopping cart management
+- Order placement
+- Order history
+- Responsive UI for all devices
 
 ---
 
-# ⚙️ Installation
+## 🧰 Tech Stack
 
-## 1. Clone the repository
+- React 19
+- Vite
+- React Router DOM
+- Context API (State Management)
+- Fetch API
+- Vanilla CSS
+
+---
+
+## 📦 Prerequisites
+
+Before running this project, make sure you have:
+
+- Node.js 20+
+- npm
+- GameStore Backend API running locally
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1. Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone git@github.com:zaid-zubi/Gamestore-frontend.git
 cd gamestore-frontend
 ```
 
-## 2. Install dependencies
-
+### 2. Install dependencies
 ```bash
 npm install
 ```
 
----
+### 3. Environment Variables
 
-# ▶️ Run the Development Server
+Create a .env file in the root directory:
+```bash
+VITE_BACKEND_API_BASE_URL=http://127.0.0.1:8000
+```
 
+### 4. Run the development server
 ```bash
 npm run dev
 ```
+==> The app will run at:
 
-The application will be available at:
-
-```
 http://localhost:5173
-```
 
+🔗 Backend Dependency
+
+This frontend requires the GameStore Backend API to be running.
+
+Make sure to:
+
+Clone and run the backend first
+Set the correct API URL in .env
 ---
 
-# 🔗 Backend Setup
-
-This frontend depends on the GameStore Backend API.
-
-Please follow the setup instructions provided in the backend repository before starting the frontend.
-
----
-
-# 📁 Project Structure
-
-```text
+📁 Project Structure
+```bash
 src/
 ├── components/     # Reusable UI components
 ├── pages/          # Application pages
-├── services/       # API communication
-├── context/        # Authentication context
-├── assets/         # Static assets
+├── services/       # API requests
+├── context/        # Authentication state
+├── assets/         # Static files
 ├── styles/         # Global styles
-└── main.jsx        # Application entry point
+└── main.jsx        # Entry point
 ```
-
 ---
-
-# ✨ Features
-
-* User authentication (Login/Register)
-* Browse available game items
-* Product details
-* Shopping cart
-* Place orders
-* View order history
-* Responsive user interface
-
----
-
-# 📜 Available Scripts
-
-Start the development server:
-
+🧪 Available Scripts
 ```bash
-npm run dev
+npm run dev       # Start development server
+npm run build     # Build for production
+npm run preview   # Preview production build
 ```
 
-Build the application for production:
+## ✨ Notes
 
-```bash
-npm run build
-```
-
-Preview the production build locally:
-
-```bash
-npm run preview
-```
- # Gamestore-frontend
+- Uses Vite environment variables (`VITE_` prefix is required)
+- Backend must be running for full functionality. Please refer to the **GameStore-backend README.md** for setup instructions
+- Designed with clean architecture and scalability in mind
