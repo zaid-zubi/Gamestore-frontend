@@ -8,11 +8,10 @@ This project communicates with a backend REST API to provide a complete shopping
 ## 🚀 Features
 
 - User authentication (Login / Register)
-- Browse and search game products
+- Products list based on location or all products with pagination
 - Product details page
-- Shopping cart management
-- Order placement
-- Order history
+- Create order {Buy one product only}
+- See Order Receipt
 - Responsive UI for all devices
 
 ---

@@ -1,21 +1,18 @@
-import { useState, useContext } from "react";
-import { login } from "../../services/authService";
-import { AuthContext } from "../../context/AuthContext";
+import { useState } from "react";
+import { register } from "../../services/authService";
 import { useNavigate } from "react-router-dom";
 
-export default function LoginPage() {
+export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { loginUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handleLogin = async () => {
+  const handleRegister = async () => {
     try {
-      const res = await login(email, password);
+      await register(email, password);
 
-      loginUser(res.access_token);
-      navigate("/products", { replace: true });
+      navigate("/login", { replace: true });
     } catch (err) {
       alert(err.message);
     }
@@ -24,7 +21,7 @@ export default function LoginPage() {
   return (
     <div className="login-page">
       <div className="auth-box">
-        <h2>Login</h2>
+        <h2>Register</h2>
 
         <input
           placeholder="email"
@@ -37,22 +34,22 @@ export default function LoginPage() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button className="primary" onClick={handleLogin}>
-          Login
+        <button className="primary" onClick={handleRegister}>
+          Register
         </button>
 
-        {/* 👇 Register link added here */}
+        {/* 👇 Login link added */}
         <p style={{ marginTop: "10px", fontSize: "14px" }}>
-          Don't have an account?{" "}
+          Already have an account?{" "}
           <span
-            onClick={() => navigate("/register")}
+            onClick={() => navigate("/login")}
             style={{
               color: "blue",
               cursor: "pointer",
               textDecoration: "underline",
             }}
           >
-            Register
+            Login
           </span>
         </p>
       </div>

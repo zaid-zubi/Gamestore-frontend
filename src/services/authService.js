@@ -34,3 +34,35 @@ export const login = async (username, password) => {
 
   return data;
 };
+
+export const register = async (email, password) => {
+  const res = await fetch(
+    `${BASE_URL}/auth/register`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        accept: "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    }
+  );
+
+  const text = await res.text();
+
+  let data;
+  try {
+    data = text ? JSON.parse(text) : null;
+  } catch {
+    throw new Error("Invalid JSON response from server");
+  }
+
+  if (!res.ok) {
+    throw new Error(data?.detail || "Register failed");
+  }
+
+  return data;
+};
